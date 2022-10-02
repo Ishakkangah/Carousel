@@ -1,0 +1,78 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.carousel {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.carousel ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel ul .slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: 200ms opacity ease-in-out;
+  transition-delay: 200ms;
+}
+
+.carousel ul .slide[data-active] {
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0;
+}
+
+.carousel ul .slide > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.carousel_button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 4rem;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 0.25px;
+  padding: 0 0.25px;
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.carousel .carousel_button:focus,
+.carousel .carousel_button:active {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.carousel .carousel_button:focus {
+  outline: 1px solid black;
+}
+
+.carousel .carousel_button.prev {
+  left: 1rem;
+}
+
+.carousel .carousel_button.next {
+  right: 1rem;
+}
